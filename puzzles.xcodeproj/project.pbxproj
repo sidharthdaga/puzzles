@@ -15,6 +15,9 @@
 		590B2A6124A42D2000E5D813 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 590B2A5F24A42D2000E5D813 /* LaunchScreen.storyboard */; };
 		590B2A6C24A42D2000E5D813 /* puzzlesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 590B2A6B24A42D2000E5D813 /* puzzlesTests.swift */; };
 		590B2A7724A42D2000E5D813 /* puzzlesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 590B2A7624A42D2000E5D813 /* puzzlesUITests.swift */; };
+		590B2A8524A42DD400E5D813 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 590B2A8424A42DD400E5D813 /* SignUpViewController.swift */; };
+		590B2A8724A42DE000E5D813 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 590B2A8624A42DE000E5D813 /* LogInViewController.swift */; };
+		590B2A8924A42DEB00E5D813 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 590B2A8824A42DEB00E5D813 /* HomeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +52,9 @@
 		590B2A7224A42D2000E5D813 /* puzzlesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = puzzlesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		590B2A7624A42D2000E5D813 /* puzzlesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = puzzlesUITests.swift; sourceTree = "<group>"; };
 		590B2A7824A42D2000E5D813 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		590B2A8424A42DD400E5D813 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		590B2A8624A42DE000E5D813 /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
+		590B2A8824A42DEB00E5D813 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,9 +105,9 @@
 		590B2A5324A42D1D00E5D813 /* puzzles */ = {
 			isa = PBXGroup;
 			children = (
+				590B2A8A24A42DEF00E5D813 /* VeiwControllers */,
 				590B2A5424A42D1D00E5D813 /* AppDelegate.swift */,
 				590B2A5624A42D1D00E5D813 /* SceneDelegate.swift */,
-				590B2A5824A42D1D00E5D813 /* ViewController.swift */,
 				590B2A5A24A42D1D00E5D813 /* Main.storyboard */,
 				590B2A5D24A42D2000E5D813 /* Assets.xcassets */,
 				590B2A5F24A42D2000E5D813 /* LaunchScreen.storyboard */,
@@ -126,6 +132,17 @@
 				590B2A7824A42D2000E5D813 /* Info.plist */,
 			);
 			path = puzzlesUITests;
+			sourceTree = "<group>";
+		};
+		590B2A8A24A42DEF00E5D813 /* VeiwControllers */ = {
+			isa = PBXGroup;
+			children = (
+				590B2A5824A42D1D00E5D813 /* ViewController.swift */,
+				590B2A8824A42DEB00E5D813 /* HomeViewController.swift */,
+				590B2A8624A42DE000E5D813 /* LogInViewController.swift */,
+				590B2A8424A42DD400E5D813 /* SignUpViewController.swift */,
+			);
+			path = VeiwControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -261,7 +278,10 @@
 			files = (
 				590B2A5924A42D1D00E5D813 /* ViewController.swift in Sources */,
 				590B2A5524A42D1D00E5D813 /* AppDelegate.swift in Sources */,
+				590B2A8524A42DD400E5D813 /* SignUpViewController.swift in Sources */,
+				590B2A8724A42DE000E5D813 /* LogInViewController.swift in Sources */,
 				590B2A5724A42D1D00E5D813 /* SceneDelegate.swift in Sources */,
+				590B2A8924A42DEB00E5D813 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
