@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>464040238023-sadpt5daopcv14h3s2jkrk0f7ohkptc2.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.464040238023-sadpt5daopcv14h3s2jkrk0f7ohkptc2</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCtVWFty7Cuc_PPon-7r6RdvrMQbXRsBnU</string>
+	<key>GCM_SENDER_ID</key>
+	<string>464040238023</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>sid.puzzles</string>
+	<key>PROJECT_ID</key>
+	<string>puzzles-383b8</string>
+	<key>STORAGE_BUCKET</key>
+	<string>puzzles-383b8.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:464040238023:ios:4f9f7259385f3ce18517e2</string>
+	<key>DATABASE_URL</key>
+	<string>https://puzzles-383b8.firebaseio.com</string>
+</dict>
+</plist>
