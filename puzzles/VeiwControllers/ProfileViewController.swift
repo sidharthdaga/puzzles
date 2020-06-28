@@ -11,18 +11,37 @@ import FirebaseAuth
 import FirebaseFirestore
 import Firebase
 
+import FirebaseDatabase
+
 class ProfileViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     @IBOutlet weak var category: UIPickerView!
     @IBOutlet weak var link: UITextField!
     @IBOutlet weak var endorsement: UITextField!
     
-    @IBAction func AddedEndorsement(_ sender: Any) {
-        let cat = pickerView(category, titleForRow: 1, forComponent: 4)
-       // let l = link.text!
-        let end = endorsement.text!
-        let db = Firestore.firestore()
-        db.collection("users").document().updateData(["categories." + (cat as! String): [end]])
+    var ref: DatabaseReference?
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        ref = Database.database().reference()
+        self.categorypicker.delegate = self
+        self.categorypicker.dataSource = self
+        pickerData = ["Movies", "Books", "TV Shows", "Hikes", "Restaurants", "Artists"]
     }
+    
+    @IBAction func AddedEndorsement(_ sender: Any) {
+       
+        let selectCateg = pickerView(category, titleForRow: 1, forComponent: 4)
+        let selectLink = link.text!
+        let selectEndors = endorsement.text!
+        
+        /*let db = Firestore.firestore()
+        db.collection("users").document().updateData(["categories." + (cat as! String): [end]])*/
+        
+        self.ref?.child("users").childByAutoId().setValue(selectEndors)
+        presentingViewController?.dismiss(animated: true, completion: nil)
+        
+    }
+    
     @IBOutlet weak var categorypicker: UIPickerView!
     var pickerData: [String] = [String]()
     
@@ -30,13 +49,6 @@ class ProfileViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
         let homescreen = storyboard?.instantiateViewController(identifier: "LogInViewController") as! LogInViewController
         self.view.window?.rootViewController = homescreen
         self.view.window?.makeKeyAndVisible()
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        self.categorypicker.delegate = self
-        self.categorypicker.dataSource = self
-        pickerData = ["Movies", "Books", "TV Shows", "Hikes", "Restaurants", "Artists"]
     }
     
     override func didReceiveMemoryWarning() {

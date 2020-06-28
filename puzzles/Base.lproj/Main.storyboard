@@ -191,12 +191,16 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="qFg-DK-9W5" firstAttribute="top" secondItem="D4f-it-WJO" secondAttribute="top" constant="40" id="0b0-j6-Cbz"/>
                             <constraint firstItem="D4f-it-WJO" firstAttribute="trailing" secondItem="qFg-DK-9W5" secondAttribute="trailing" constant="40" id="XL0-ZL-CX6"/>
                             <constraint firstItem="qFg-DK-9W5" firstAttribute="leading" secondItem="D4f-it-WJO" secondAttribute="leading" constant="40" id="vt2-a4-Jqm"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="D4f-it-WJO"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="uJS-Wx-lWZ" appends="YES" id="iQD-sZ-pDa"/>
+                        </connections>
                     </view>
                     <tabBarItem key="tabBarItem" title="Profile" image="person.fill" catalog="system" id="c5i-Oi-jQr"/>
                     <toolbarItems/>
@@ -210,6 +214,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JR5-cH-HaT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationItem title="Title" id="fQA-V5-Xk4"/>
+                <swipeGestureRecognizer direction="right" id="uJS-Wx-lWZ"/>
             </objects>
             <point key="canvasLocation" x="3592.753623188406" y="-836.38392857142856"/>
         </scene>
@@ -241,12 +246,17 @@
                             </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <gestureRecognizers/>
                         <viewLayoutGuide key="safeArea" id="2aC-kB-ofK"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="128-sR-deW" appends="YES" id="ERC-gW-yik"/>
+                        </connections>
                     </view>
                     <tabBarItem key="tabBarItem" title="Recomendations" image="magnifyingglass" catalog="system" id="vea-w0-eJY"/>
                     <navigationItem key="navigationItem" id="gPN-fv-4hS"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dCM-U6-MhX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="right" id="128-sR-deW"/>
             </objects>
             <point key="canvasLocation" x="3593" y="582"/>
         </scene>
@@ -385,6 +395,7 @@
             <objects>
                 <tabBarController storyboardIdentifier="MainTabController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Gof-tF-5Y6" customClass="MainTabController" customModule="puzzles" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" id="Kc5-Kc-DXt"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="gpG-HQ-Oit">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -403,7 +414,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Oai-OR-ofA"/>
+        <segue reference="1So-Jw-OjL"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="bookmark.fill" catalog="system" width="112" height="128"/>
