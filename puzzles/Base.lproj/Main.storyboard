@@ -132,29 +132,149 @@
             </objects>
             <point key="canvasLocation" x="1037.68115942029" y="129.91071428571428"/>
         </scene>
-        <!--Home View Controller-->
+        <!--Profile-->
         <scene sceneID="E91-2G-gDu">
             <objects>
-                <viewController storyboardIdentifier="HomeVC" id="0pn-Ha-1bw" customClass="HomeViewController" customModule="puzzles" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="0pn-Ha-1bw" customClass="ProfileViewController" customModule="puzzles" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3rg-kb-QEt">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Welcome" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LsC-Ft-pTq">
-                                <rect key="frame" x="165" y="437" width="84" height="23"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="qFg-DK-9W5">
+                                <rect key="frame" x="40" y="84" width="334" height="300"/>
+                                <subviews>
+                                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ls0-sK-sNN">
+                                        <rect key="frame" x="0.0" y="0.0" width="334" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="bSj-V6-PAa"/>
+                                        </constraints>
+                                    </pickerView>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Endorsement Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wYy-Fy-mfn">
+                                        <rect key="frame" x="0.0" y="80" width="334" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="8JX-qa-vun"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Endoresment Link" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ozy-i4-33D">
+                                        <rect key="frame" x="0.0" y="160" width="334" height="60"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gf9-QG-rOp">
+                                        <rect key="frame" x="0.0" y="240" width="334" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="sUl-Sz-8P3"/>
+                                        </constraints>
+                                        <state key="normal" title="Add Endorsement"/>
+                                        <connections>
+                                            <action selector="AddedEndorsement:" destination="0pn-Ha-1bw" eventType="touchUpInside" id="G40-uT-Osw"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="wYy-Fy-mfn" firstAttribute="height" secondItem="ls0-sK-sNN" secondAttribute="height" id="3fu-KV-Gg9"/>
+                                    <constraint firstItem="ozy-i4-33D" firstAttribute="height" secondItem="wYy-Fy-mfn" secondAttribute="height" id="4OV-nz-ouY"/>
+                                    <constraint firstItem="Gf9-QG-rOp" firstAttribute="height" secondItem="ls0-sK-sNN" secondAttribute="height" id="s61-PR-FyK"/>
+                                    <constraint firstItem="ozy-i4-33D" firstAttribute="height" secondItem="ls0-sK-sNN" secondAttribute="height" id="xHf-tC-WaW"/>
+                                    <constraint firstItem="Gf9-QG-rOp" firstAttribute="height" secondItem="wYy-Fy-mfn" secondAttribute="height" id="zBR-vr-5Y0"/>
+                                </constraints>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0il-wF-ihD">
+                                <rect key="frame" x="20" y="723" width="71" height="28"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
+                                <state key="normal" title="Logout"/>
+                                <connections>
+                                    <action selector="logout:" destination="0pn-Ha-1bw" eventType="touchUpInside" id="nxm-2A-MiI"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="qFg-DK-9W5" firstAttribute="top" secondItem="D4f-it-WJO" secondAttribute="top" constant="40" id="0b0-j6-Cbz"/>
+                            <constraint firstItem="D4f-it-WJO" firstAttribute="trailing" secondItem="qFg-DK-9W5" secondAttribute="trailing" constant="40" id="XL0-ZL-CX6"/>
+                            <constraint firstItem="qFg-DK-9W5" firstAttribute="leading" secondItem="D4f-it-WJO" secondAttribute="leading" constant="40" id="vt2-a4-Jqm"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="D4f-it-WJO"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Profile" image="person.fill" catalog="system" id="c5i-Oi-jQr"/>
+                    <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="category" destination="ls0-sK-sNN" id="pot-r6-m9b"/>
+                        <outlet property="categorypicker" destination="ls0-sK-sNN" id="rps-g1-787"/>
+                        <outlet property="endorsement" destination="wYy-Fy-mfn" id="fND-Cy-bnR"/>
+                        <outlet property="link" destination="ozy-i4-33D" id="d84-6Y-SuN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JR5-cH-HaT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <navigationItem title="Title" id="fQA-V5-Xk4"/>
+            </objects>
+            <point key="canvasLocation" x="3592.753623188406" y="-836.38392857142856"/>
+        </scene>
+        <!--Timeline-->
+        <scene sceneID="1tA-9r-yYR">
+            <objects>
+                <viewController id="CQi-0r-W9V" customClass="TimelineViewController" customModule="puzzles" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Timeline" image="house.fill" catalog="system" selectedImage="house.fill" id="lVG-rX-rPb"/>
+                    <navigationItem key="navigationItem" id="K3g-NL-X9I"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="feV-Gp-qBB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3593" y="-161"/>
+        </scene>
+        <!--Recomendations-->
+        <scene sceneID="9zM-Cj-klK">
+            <objects>
+                <viewController id="71P-zr-8W7" customClass="ReccomendationsViewController" customModule="puzzles" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Dvo-2d-P9C">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Reccomendations" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7k5-k1-5LP">
+                                <rect key="frame" x="186" y="272" width="138" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="D4f-it-WJO"/>
+                        <viewLayoutGuide key="safeArea" id="2aC-kB-ofK"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Recomendations" image="magnifyingglass" catalog="system" id="vea-w0-eJY"/>
+                    <navigationItem key="navigationItem" id="gPN-fv-4hS"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="JR5-cH-HaT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dCM-U6-MhX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2726" y="130"/>
+            <point key="canvasLocation" x="3593" y="582"/>
+        </scene>
+        <!--Saved-->
+        <scene sceneID="dYc-Hq-ekR">
+            <objects>
+                <viewController id="I61-iy-euQ" customClass="SavedViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bD5-mG-G8z">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Saved" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5zb-JO-Cki">
+                                <rect key="frame" x="186" y="292" width="47" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="Y81-AJ-F9k"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Saved" image="bookmark.fill" catalog="system" id="8rT-87-eOH"/>
+                    <navigationItem key="navigationItem" id="yjK-UK-qiz"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="P0r-tQ-Huv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3593" y="1272"/>
         </scene>
         <!--Sign Up View Controller-->
         <scene sceneID="rm4-Tv-RaE">
@@ -224,7 +344,7 @@
                             <outletCollection property="gestureRecognizers" destination="1pk-Vb-pzd" appends="YES" id="jy8-TU-JLO"/>
                         </connections>
                     </view>
-                    <navigationItem key="navigationItem" id="zhj-EY-Zxz"/>
+                    <navigationItem key="navigationItem" id="09Z-B1-iPg"/>
                     <connections>
                         <outlet property="email" destination="MXh-XP-COY" id="zfZ-Ne-5V4"/>
                         <outlet property="error" destination="cGC-oh-kAw" id="3Ql-ap-8Kk"/>
@@ -260,8 +380,35 @@
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="129.91071428571428"/>
         </scene>
+        <!--Main Tab Controller-->
+        <scene sceneID="j5e-jm-EEA">
+            <objects>
+                <tabBarController storyboardIdentifier="MainTabController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Gof-tF-5Y6" customClass="MainTabController" customModule="puzzles" customModuleProvider="target" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="gpG-HQ-Oit">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="0pn-Ha-1bw" kind="relationship" relationship="viewControllers" id="ii2-kl-NUR"/>
+                        <segue destination="CQi-0r-W9V" kind="relationship" relationship="viewControllers" id="V1J-bV-RO1"/>
+                        <segue destination="71P-zr-8W7" kind="relationship" relationship="viewControllers" id="fQ5-x8-CiA"/>
+                        <segue destination="I61-iy-euQ" kind="relationship" relationship="viewControllers" id="loh-LK-DK2"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kGf-ZD-XzL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2684" y="64"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="Oai-OR-ofA"/>
     </inferredMetricsTieBreakers>
+    <resources>
+        <image name="bookmark.fill" catalog="system" width="112" height="128"/>
+        <image name="house.fill" catalog="system" width="128" height="106"/>
+        <image name="magnifyingglass" catalog="system" width="128" height="115"/>
+        <image name="person.fill" catalog="system" width="128" height="120"/>
+    </resources>
 </document>

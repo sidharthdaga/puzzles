@@ -47,8 +47,8 @@ class LogInViewController: UIViewController {
                 self.error.text = error!.localizedDescription
                 self.error.alpha = 1
             } else {
-                let homeController = self.storyboard?.instantiateViewController(identifier: Constants.Storyboard.homeViewController) as? HomeViewController
-                self.view.window?.rootViewController = homeController
+                let mainTabController = self.storyboard?.instantiateViewController(identifier: "MainTabController") as! MainTabController
+                self.view.window?.rootViewController = mainTabController
                 self.view.window?.makeKeyAndVisible()
             }
         }

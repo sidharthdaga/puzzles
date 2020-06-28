@@ -61,7 +61,7 @@ class SignUpViewController: UIViewController {
                     self.showError(message: "Error creating user")
                 } else {
                     let db = Firestore.firestore()
-                    db.collection("users").addDocument(data: ["firstname": firstN, "lastname": lastN, "uid": result!.user.uid]) { (error) in
+                    db.collection("users").addDocument(data: ["firstname": firstN, "lastname": lastN, "uid": result!.user.uid, "categories.movies": [""], "categories.hikes": [""], "categories.tvshows": [""], "categories.restaurants": [""], "categories.books": [""], "categories.artists": [""]]) { (error) in
                         if error != nil {
                             self.showError(message: "Error saving user data")
                         }
@@ -78,8 +78,8 @@ class SignUpViewController: UIViewController {
     }
     
     func transitionToHome() {
-        let homeController = storyboard?.instantiateViewController(identifier: Constants.Storyboard.homeViewController) as? HomeViewController
-        view.window?.rootViewController = homeController
-        view.window?.makeKeyAndVisible()
+        let mainTabController = storyboard?.instantiateViewController(identifier: "MainTabController") as! MainTabController
+        self.view.window?.rootViewController = mainTabController
+        self.view.window?.makeKeyAndVisible()
     }
 }
