@@ -13,36 +13,26 @@ import Firebase
 import FirebaseDatabase
 
 class ProfileViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
-    @IBOutlet weak var category: UIPickerView!
+    
+    @IBOutlet weak var picker: UIPickerView!
     @IBOutlet weak var link: UITextField!
     @IBOutlet weak var endorsement: UITextField!
-    
+    var selectCateg = ""
     var ref: DatabaseReference?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         ref = Database.database().reference()
-        self.categorypicker.delegate = self
-        self.categorypicker.dataSource = self
+        self.picker.delegate = self
+        self.picker.dataSource = self
         pickerData = ["Movies", "Books", "TV Shows", "Hikes", "Restaurants", "Artists"]
     }
     
     @IBAction func AddedEndorsement(_ sender: Any) {
-       
-        let selectCateg = pickerView(category, titleForRow: 1, forComponent: 4)
         let selectLink = link.text!
         let selectEndors = endorsement.text!
         let db = Firestore.firestore()
-        db.collection("users").document("s").setData(["boon" : "BOON"], merge: true)
-        let uservc = self.storyboard?.instantiateViewController(withIdentifier: "SignUpViewController") as! SignUpViewController
-        print(uservc.username)
-        print(uservc.firstName)
-        let uid = uservc.username.text!.trimmingCharacters(in: .whitespacesAndNewlines)
-        
-        
-        //self.ref?.child("users").childByAutoId().setValue(selectEndors)
-        //presentingViewController?.dismiss(animated: true, completion: nil)
-        
+        db.collection("users").document(Auth.auth().currentUser?.email as! String).collection("categories").document(selectCateg).setData([selectEndors: 0], merge: true)
     }
     
     @IBOutlet weak var categorypicker: UIPickerView!
@@ -68,9 +58,10 @@ class ProfileViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
         return pickerData.count
     }
     
-    // The data to return fopr the row and component (column) that's being passed in
+    // The data to return for the row and component (column) that's being passed in
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return pickerData[row]
+        selectCateg = pickerData[row]
+        return selectCateg
     }
     /*
     // MARK: - Navigation
