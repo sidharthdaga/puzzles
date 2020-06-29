@@ -13,12 +13,14 @@ import FirebaseFirestore
 
 class SignUpViewController: UIViewController {
 
+    @IBOutlet weak var username: UITextField!
     @IBOutlet weak var error: UILabel!
     @IBOutlet weak var signUp: UIButton!
     @IBOutlet weak var password: UITextField!
     @IBOutlet weak var email: UITextField!
     @IBOutlet weak var lastName: UITextField!
     @IBOutlet weak var firstName: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -56,12 +58,13 @@ class SignUpViewController: UIViewController {
             let lastN = lastName.text!.trimmingCharacters(in: .whitespacesAndNewlines)
             let gmail = email.text!.trimmingCharacters(in: .whitespacesAndNewlines)
             let pass = password.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+            let user = username.text!.trimmingCharacters(in: .whitespacesAndNewlines)
             Auth.auth().createUser(withEmail: gmail, password: pass) { (result, err) in
                 if err != nil {
                     self.showError(message: "Error creating user")
                 } else {
                     let db = Firestore.firestore()
-                    db.collection("users").addDocument(data: ["firstname": firstN, "lastname": lastN, "uid": result!.user.uid, "categories.movies": [""], "categories.hikes": [""], "categories.tvshows": [""], "categories.restaurants": [""], "categories.books": [""], "categories.artists": [""]]) { (error) in
+                    db.collection("users").document(user).setData( ["firstname": firstN, "lastname": lastN, "uid": result!.user.uid, "username" : user]) { (error) in
                         if error != nil {
                             self.showError(message: "Error saving user data")
                         }

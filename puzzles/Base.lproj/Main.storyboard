@@ -289,13 +289,13 @@
         <!--Sign Up View Controller-->
         <scene sceneID="rm4-Tv-RaE">
             <objects>
-                <viewController id="pnZ-3O-FSc" customClass="SignUpViewController" customModule="puzzles" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SignUpViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="pnZ-3O-FSc" customClass="SignUpViewController" customModule="puzzles" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fBz-z7-E1v">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="EFs-Un-qWG">
-                                <rect key="frame" x="40" y="40" width="334" height="350"/>
+                                <rect key="frame" x="40" y="40" width="334" height="404"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="First name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="K2X-IJ-DPw">
                                         <rect key="frame" x="0.0" y="0.0" width="334" height="50"/>
@@ -317,8 +317,13 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2Wb-ty-xag">
+                                        <rect key="frame" x="0.0" y="280" width="334" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UXb-Hj-T0o">
-                                        <rect key="frame" x="0.0" y="280" width="334" height="50"/>
+                                        <rect key="frame" x="0.0" y="334" width="334" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="lk2-pw-i5d"/>
                                         </constraints>
@@ -328,7 +333,7 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cGC-oh-kAw">
-                                        <rect key="frame" x="0.0" y="350" width="334" height="0.0"/>
+                                        <rect key="frame" x="0.0" y="404" width="334" height="0.0"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -362,6 +367,7 @@
                         <outlet property="lastName" destination="tEL-Dy-QKw" id="zJS-gX-bL9"/>
                         <outlet property="password" destination="zWe-96-NJc" id="BIg-U3-VpV"/>
                         <outlet property="signUp" destination="UXb-Hj-T0o" id="g8d-or-3PQ"/>
+                        <outlet property="username" destination="2Wb-ty-xag" id="qv7-JL-H6P"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y3c-EQ-D16" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

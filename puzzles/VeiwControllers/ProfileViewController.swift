@@ -10,7 +10,6 @@ import UIKit
 import FirebaseAuth
 import FirebaseFirestore
 import Firebase
-
 import FirebaseDatabase
 
 class ProfileViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
@@ -33,12 +32,16 @@ class ProfileViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
         let selectCateg = pickerView(category, titleForRow: 1, forComponent: 4)
         let selectLink = link.text!
         let selectEndors = endorsement.text!
+        let db = Firestore.firestore()
+        db.collection("users").document("s").setData(["boon" : "BOON"], merge: true)
+        let uservc = self.storyboard?.instantiateViewController(withIdentifier: "SignUpViewController") as! SignUpViewController
+        print(uservc.username)
+        print(uservc.firstName)
+        let uid = uservc.username.text!.trimmingCharacters(in: .whitespacesAndNewlines)
         
-        /*let db = Firestore.firestore()
-        db.collection("users").document().updateData(["categories." + (cat as! String): [end]])*/
         
-        self.ref?.child("users").childByAutoId().setValue(selectEndors)
-        presentingViewController?.dismiss(animated: true, completion: nil)
+        //self.ref?.child("users").childByAutoId().setValue(selectEndors)
+        //presentingViewController?.dismiss(animated: true, completion: nil)
         
     }
     
