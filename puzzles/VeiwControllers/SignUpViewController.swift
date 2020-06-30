@@ -64,7 +64,7 @@ class SignUpViewController: UIViewController {
                     self.showError(message: "Error creating user")
                 } else {
                     let db = Firestore.firestore()
-                    db.collection("users").document(gmail).setData( ["firstname": firstN, "lastname": lastN, "uid": result!.user.uid, "username" : user]) { (error) in
+                    db.collection("users").document(gmail).collection("profile").document(user).setData( ["firstname": firstN, "lastname": lastN, "uid": result!.user.uid, "username" : user]) { (error) in
                         if error != nil {
                             self.showError(message: "Error saving user data")
                         }

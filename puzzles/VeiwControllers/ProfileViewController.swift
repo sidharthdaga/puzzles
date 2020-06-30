@@ -14,6 +14,11 @@ import FirebaseDatabase
 
 class ProfileViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
+    @IBAction func SwitchToViewProfile(_ sender: Any) {
+        let homescreen = storyboard?.instantiateViewController(identifier: "EndorsementsViewController") as! EndorsementsViewController
+        self.view.window?.rootViewController = homescreen
+        self.view.window?.makeKeyAndVisible()
+    }
     @IBOutlet weak var picker: UIPickerView!
     @IBOutlet weak var link: UITextField!
     @IBOutlet weak var endorsement: UITextField!
@@ -32,7 +37,7 @@ class ProfileViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
         let selectLink = link.text!
         let selectEndors = endorsement.text!
         let db = Firestore.firestore()
-        db.collection("users").document(Auth.auth().currentUser?.email as! String).collection("categories").document(selectCateg).setData([selectEndors: 0], merge: true)
+        db.collection("users").document(Auth.auth().currentUser?.email as! String).collection("categories").document(selectCateg).setData([selectEndors: [selectLink, 0]], merge: true)
     }
     
     @IBOutlet weak var categorypicker: UIPickerView!
