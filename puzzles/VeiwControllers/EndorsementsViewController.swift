@@ -63,12 +63,11 @@ class EndorsementsViewController: UIViewController{
                         self.view.addSubview(names)
                         ycor += CGFloat(150 * times)
                       }
-                    
                   }
               }
             profileCollectionRef = Firestore.firestore().collection("users").document(Auth.auth().currentUser?.email as! String).collection("profile")
             profileCollectionRef.getDocuments { (snap, error) in
-            if let err = error {
+            if error != nil {
                 debugPrint("bruh")
             } else {
                 for document in snap!.documents {
@@ -82,9 +81,6 @@ class EndorsementsViewController: UIViewController{
                     self.lastNAME.text = last
                 }
             }
-     
-
-            }
+        }
     }
-    
 }
