@@ -18,6 +18,7 @@ class ReccomendationsViewController: UITableViewController {
         let db = Firestore.firestore()
         let myViewController: EndorsementsViewController = EndorsementsViewController(nibName: nil, bundle: nil)
         let userEndos = myViewController.endoses
+        // this is how u access all the users
         db.collection("users").getDocuments() { (querySnapshot, err) in
             if let err = err {
                 print("Error getting documents: \(err)")
