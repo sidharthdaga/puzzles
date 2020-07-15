@@ -10,7 +10,7 @@ import UIKit
 import FirebaseAuth
 import FirebaseFirestore
 
-class ReccomendationsViewController: UITableViewController {
+class ReccomendationsViewController: UIViewController {
     var recs = [String: Dictionary<String, Int>]()
     var recEndorses = [String: Dictionary<String, Array<Any>>]()
     override func viewDidLoad() {
