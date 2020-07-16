@@ -40,7 +40,7 @@ class CategoryViewController: UIViewController, UITableViewDelegate, UITableView
        }
        
        func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cellular", for: indexPath)
         var ans = ""
         for key in endorse[indexPath.row]!.keys {
             ans = key

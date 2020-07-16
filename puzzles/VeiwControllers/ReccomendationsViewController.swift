@@ -10,11 +10,15 @@ import UIKit
 import FirebaseAuth
 import FirebaseFirestore
 
-class ReccomendationsViewController: UIViewController {
+class ReccomendationsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+
+    
     var recs = [String: Dictionary<String, Int>]()
     var recEndorses = [String: Dictionary<String, Array<Any>>]()
     override func viewDidLoad() {
         super.viewDidLoad()
+        tblView.delegate = self
+        tblView.dataSource = self
         let db = Firestore.firestore()
         let myViewController: EndorsementsViewController = EndorsementsViewController(nibName: nil, bundle: nil)
         let userEndos = myViewController.endoses
@@ -70,4 +74,20 @@ class ReccomendationsViewController: UIViewController {
     }
     */
 }
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        recs.count
+       }
+       
+       func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cells", for: indexPath)
+        let tripIndex = indexPath.row
+        var arr = [String]()
+        for rec in recs {
+            arr = arr + [rec.key]
+        }
+        cell.textLabel?.text = arr[tripIndex]
+        return cell
+       }
+    
+    @IBOutlet weak var tblView: UITableView!
 }
