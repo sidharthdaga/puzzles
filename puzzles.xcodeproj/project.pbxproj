@@ -25,6 +25,7 @@
 		59A5E65324A6A082003E9004 /* MainTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A5E65224A6A082003E9004 /* MainTabController.swift */; };
 		59A5E65524AA9E28003E9004 /* EndorsementsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A5E65424AA9E28003E9004 /* EndorsementsViewController.swift */; };
 		59A5E65724BE5E3F003E9004 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A5E65624BE5E3F003E9004 /* SearchViewController.swift */; };
+		59A5E65924BFC78D003E9004 /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A5E65824BFC78D003E9004 /* CategoryViewController.swift */; };
 		92B41068E493DB8132AF5432 /* Pods_puzzles_puzzlesUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EB160C131A069A456332586 /* Pods_puzzles_puzzlesUITests.framework */; };
 		99BCE6D5F36DFCACD945DBC3 /* Pods_puzzlesTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7927FDE6304A7D878A1BFF6 /* Pods_puzzlesTests.framework */; };
 		C105D445189051AE97260C93 /* Pods_puzzles.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F818FE6AEC7D24B1A9B0D97 /* Pods_puzzles.framework */; };
@@ -75,6 +76,7 @@
 		59A5E65224A6A082003E9004 /* MainTabController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabController.swift; sourceTree = "<group>"; };
 		59A5E65424AA9E28003E9004 /* EndorsementsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndorsementsViewController.swift; sourceTree = "<group>"; };
 		59A5E65624BE5E3F003E9004 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		59A5E65824BFC78D003E9004 /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
 		A4F49E79E71A361007960806 /* Pods-puzzlesTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-puzzlesTests.debug.xcconfig"; path = "Target Support Files/Pods-puzzlesTests/Pods-puzzlesTests.debug.xcconfig"; sourceTree = "<group>"; };
 		A7927FDE6304A7D878A1BFF6 /* Pods_puzzlesTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_puzzlesTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADBDB3FE4934891B247E0A82 /* Pods-puzzles-puzzlesUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-puzzles-puzzlesUITests.debug.xcconfig"; path = "Target Support Files/Pods-puzzles-puzzlesUITests/Pods-puzzles-puzzlesUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -189,6 +191,7 @@
 				59A5E65024A69D18003E9004 /* ProfileViewController.swift */,
 				59A5E65424AA9E28003E9004 /* EndorsementsViewController.swift */,
 				59A5E65624BE5E3F003E9004 /* SearchViewController.swift */,
+				59A5E65824BFC78D003E9004 /* CategoryViewController.swift */,
 			);
 			path = VeiwControllers;
 			sourceTree = "<group>";
@@ -459,6 +462,7 @@
 				59A5E65724BE5E3F003E9004 /* SearchViewController.swift in Sources */,
 				590B2A5524A42D1D00E5D813 /* AppDelegate.swift in Sources */,
 				59A5E65124A69D18003E9004 /* ProfileViewController.swift in Sources */,
+				59A5E65924BFC78D003E9004 /* CategoryViewController.swift in Sources */,
 				590B2A8524A42DD400E5D813 /* SignUpViewController.swift in Sources */,
 				590B2A8724A42DE000E5D813 /* LogInViewController.swift in Sources */,
 				59A5E64F24A69641003E9004 /* ReccomendationsViewController.swift in Sources */,
